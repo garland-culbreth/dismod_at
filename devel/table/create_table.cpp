@@ -130,7 +130,7 @@ void create_table(
    const CppAD::vector<std::string>&   col_type          ,
    const CppAD::vector<bool>&          col_unique        ,
    const CppAD::vector<std::string>&   row_value         ,
-   const std::size_t&                  cut_size = 5000000)
+   const std::size_t                   cut_size = 5000000)
 {  using CppAD::to_string;
 
    std::string cmd;
