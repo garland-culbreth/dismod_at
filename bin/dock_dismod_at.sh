@@ -156,7 +156,7 @@ set -e -u
 # {xrst_spell_off}
 # {xrst_code sh}
    dismod_at_version='2025.7.11'
-   dismod_at_hash='247bca1b8ca873a24591326a0b532b657518763e'
+   dismod_at_hash='4bcc8e47f572c17df970f74a756b3f133daa74de'
 # {xrst_code}
 # {xrst_spell_on}
 #
