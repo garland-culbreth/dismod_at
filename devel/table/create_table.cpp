@@ -124,13 +124,13 @@ The file :ref:`create_table_xam.cpp-name` is an example use of
 namespace dismod_at { // BEGIN_DISMOD_AT_NAMESPACE
 
 void create_table(
-   sqlite3*                            db             ,
-   const std::string&                  table_name     ,
-   const CppAD::vector<std::string>&   col_name       ,
-   const CppAD::vector<std::string>&   col_type       ,
-   const CppAD::vector<bool>&          col_unique     ,
-   const CppAD::vector<std::string>&   row_value      ,
-   const std::size_t&                  cut_size = 1000)
+   sqlite3*                            db        ,
+   const std::string&                  table_name,
+   const CppAD::vector<std::string>&   col_name  ,
+   const CppAD::vector<std::string>&   col_type  ,
+   const CppAD::vector<bool>&          col_unique,
+   const CppAD::vector<std::string>&   row_value ,
+   const std::size_t&                  cut_size  )
 {  using CppAD::to_string;
 
    std::string cmd;
