@@ -5,10 +5,10 @@
 /*
 Check that create table commands with split insertions execute properly.
 */
-# include <dismod_at/exec_sql_cmd.hpp>
+# include <cppad/utility/to_string.hpp>
 # include <dismod_at/open_connection.hpp>
 # include <dismod_at/get_age_table.hpp>
-# include <dismod_at/null_int.hpp>
+# include <dismod_at/create_table.hpp>
 
 namespace { // BEGIN EMPTY_NAMESPACE
 
@@ -30,7 +30,7 @@ test_create_table_split(void)
    string col_name   = "age";
    string col_type   = "real";
    bool   col_unique = false;
-   vector<string> row_value(n_col * n_subset);
+   vector<string> row_value(n_col * n_row);
    size_t cut_size   = 3;
 
 // for(size_t k = 0; k < n_row; ++k)
@@ -38,7 +38,7 @@ test_create_table_split(void)
    {  
       row_value[n_col * k] = to_string(k); 
    }
-   create_table(
+   dismod_at::create_table(
       db, table_name, col_name, col_type, col_unique, row_value, cut_size
    );
 
@@ -47,11 +47,11 @@ test_create_table_split(void)
 
    std::cout << "age table: " << age_table << std::endl;
 
-   ok  &= age_table[ 0 ]   == {0, 0},
-   ok  &= age_table[ 1 ]   == {1, 1},
-   ok  &= age_table[ 2 ]   == {2, 2},
-   ok  &= age_table[ 3 ]   == {3, 3},
-   ok  &= age_table[ 4 ]   == {4, 4},
+   for(size_t k = 0; k < n_row; k++)
+   {  
+      vector<double> row = {static_cast<double>(k), static_cast<double>(k)};
+      ok &= age_table[ k ] == k;
+   }
 
    return ok;
 } // END EMPTY_NAMESPACE
