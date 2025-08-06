@@ -31,6 +31,7 @@ test_create_table_split(void)
    string col_type   = "real";
    bool   col_unique = false;
    vector<string> row_value(n_col * n_subset);
+   size_t cut_size   = 3;
 
 // for(size_t k = 0; k < n_row; ++k)
    for(size_t k = 0; k < n_row; k++)
@@ -38,17 +39,19 @@ test_create_table_split(void)
       row_value[n_col * k] = to_string(k); 
    }
    create_table(
-      db, table_name, col_name, col_type, col_unique, row_value
+      db, table_name, col_name, col_type, col_unique, row_value, cut_size
    );
 
    // get age table
    vector<double> age_table = dismod_at::get_age_table(db);
 
-   ok  &= age_table[ 0 ]   == "insert into age values(0,  00.0)",
-   ok  &= age_table[ 1 ]   == "insert into age values(1,  25.0)",
-   ok  &= age_table[ 2 ]   == "insert into age values(2, 100.0)",
-   ok  &= age_table[ 3 ]   == "insert into age values(3,  50.0)",
-   ok  &= age_table[ 4 ]   == "insert into age values(4,  75.0)",
+   std::cout << "age table: " << age_table << std::endl;
+
+   ok  &= age_table[ 0 ]   == {0, 0},
+   ok  &= age_table[ 1 ]   == {1, 1},
+   ok  &= age_table[ 2 ]   == {2, 2},
+   ok  &= age_table[ 3 ]   == {3, 3},
+   ok  &= age_table[ 4 ]   == {4, 4},
 
    return ok;
 } // END EMPTY_NAMESPACE
