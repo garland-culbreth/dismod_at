@@ -50,8 +50,8 @@ test_create_table_split(void)
 
    for(size_t k = 0; k < n_row; k++)
    {  
-      vector<double> row = {static_cast<double>(k), static_cast<double>(k)};
-      ok &= age_table[ k ] == row;
+      double row_val = static_cast<double>(k);
+      ok &= age_table[ k ] == row_val;
    }
 
    return ok;
