@@ -14,6 +14,7 @@ ADD_EXECUTABLE(test_devel EXCLUDE_FROM_ALL
    rate_mulcov.cpp
    test_devel.cpp
    cppad_mixed_xam.cpp
+   create_table_split.cpp
 )
 SET_TARGET_PROPERTIES(
    test_devel PROPERTIES COMPILE_FLAGS "${extra_cxx_flags}"
