@@ -55,6 +55,8 @@ test_create_table_split(void)
    }
 
    return ok;
+}
+
 } // END EMPTY_NAMESPACE
 
 
