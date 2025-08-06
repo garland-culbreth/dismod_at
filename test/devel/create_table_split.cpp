@@ -34,8 +34,7 @@ test_create_table_split(void)
    vector<string> row_value(n_col * n_row);
    size_t cut_size           = 3;
 
-// for(size_t k = 0; k < n_row; ++k)
-   for(size_t k = 0; k < n_row; k++)
+   for(size_t k = 0; k < n_row; ++k)
    {  
       row_value[n_col * k] = to_string(k); 
    }
