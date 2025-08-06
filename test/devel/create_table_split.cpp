@@ -25,14 +25,14 @@ test_create_table_split(void)
    bool     new_file  = true;
    sqlite3* db        = dismod_at::open_connection(file_name, new_file);
 
-   string table_name = "age";
-   size_t n_col      = 1;
-   size_t n_row      = 5;
-   string col_name   = "age";
-   string col_type   = "real";
+   string table_name         = "age";
+   size_t n_col              = 1;
+   size_t n_row              = 5;
+   vector<string> col_name   = {"age"};
+   vector<string> col_type   = {"real"};
    bool   col_unique = false;
    vector<string> row_value(n_col * n_row);
-   size_t cut_size   = 3;
+   size_t cut_size           = 3;
 
 // for(size_t k = 0; k < n_row; ++k)
    for(size_t k = 0; k < n_row; k++)
