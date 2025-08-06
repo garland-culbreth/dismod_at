@@ -19,6 +19,7 @@ test_create_table_split(void)
    bool   ok = true;
    using  std::string;
    using  CppAD::vector;
+   using  CppAD::to_string;
 
    string   file_name = "example.db";
    bool     new_file  = true;
@@ -50,7 +51,7 @@ test_create_table_split(void)
    for(size_t k = 0; k < n_row; k++)
    {  
       vector<double> row = {static_cast<double>(k), static_cast<double>(k)};
-      ok &= age_table[ k ] == k;
+      ok &= age_table[ k ] == row;
    }
 
    return ok;
