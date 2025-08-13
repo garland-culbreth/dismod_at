@@ -30,7 +30,7 @@ test_create_table_split(void)
    size_t n_row              = 5;
    vector<string> col_name   = {"age"};
    vector<string> col_type   = {"real"};
-   bool   col_unique = false;
+   vector<bool>   col_unique = {false};
    vector<string> row_value(n_col * n_row);
    size_t cut_size           = 3;
 
