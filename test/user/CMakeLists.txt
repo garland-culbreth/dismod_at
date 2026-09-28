@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # SPDX-FileCopyrightText: University of Washington <https://www.washington.edu>
 # SPDX-FileContributor: 2014-25 Bradley M. Bell
+# SPDX-FileContributor: 2026 Garland Culbreth
 # ----------------------------------------------------------------------------
 # Build test / user
 SET(depends "")
@@ -17,6 +18,7 @@ FOREACH(user_case
    const_value
    csv2db
    db2csv
+   fit_in_sample
    fit_meas_noise
    fit_sim
    hes_fixed
