@@ -157,7 +157,7 @@ def example_db (file_name) :
          'name':     'prior_dage',
          'density':  'log_gaussian',
          'mean':     0.0,
-         'std':      3.0,
+         'std':      1.0,
          'eta':      1e-10,
       }
    ]
@@ -208,7 +208,7 @@ def example_db (file_name) :
 
       { 'name':'quasi_fixed',            'value':'false'              },
       { 'name':'max_num_iter_fixed',     'value':'200'                },
-      { 'name':'print_level_fixed',      'value':'0'                  },
+      { 'name':'print_level_fixed',      'value':'5'                  },
       { 'name':'tolerance_fixed',        'value':'1e-8'               },
 
       { 'name':'max_num_iter_random',    'value':'100'                },
